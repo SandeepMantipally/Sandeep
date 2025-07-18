@@ -19,7 +19,7 @@ st.markdown("""
 # Load and preprocess data
 @st.cache_data
 def load_data():
-    df = pd.read_csv("C:/Users/Sandeep/OneDrive/Desktop/python/genderdata.csv")
+    df = pd.read_csv("genderdata.csv")
     df = df.dropna()
     df['gender'] = df['gender'].str.strip().str.title()  # Normalize to 'Male'/'Female'
     df['text'] = df['text'].apply(lambda x: re.sub(r'[^\w\s]', '', x.lower()))  # Basic cleaning
